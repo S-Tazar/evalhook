@@ -30,14 +30,14 @@ static zend_op_array *evalhook_compile_string(zend_string *source_string, const 
     }
 
 	len = ZSTR_LEN(source_string);
-    copy = estrndup(ZSTR_VAL(source_string), len);
+	copy = estrndup(ZSTR_VAL(source_string), len);
 	if (len > strlen(copy)) {
 		for (c=0; c<len; c++) if (copy[c] == 0) copy[c] == '?';
 	}
 
 	php_printf("\n--------- start decoding ------------\n");
-    php_printf("%s\n", copy);
-    php_printf("--------- end decoding ------------\n");
+	php_printf("%s\n", copy);
+	php_printf("--------- end decoding ------------\n");
 
 	return orig_compile_string(source_string, filename, position);
 }
