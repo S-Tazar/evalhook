@@ -36,7 +36,7 @@ static zend_op_array *evalhook_compile_string(zend_string *source_string, const 
 	}
 
 	php_printf("\n--------- start decoding ------------\n");
-	php_printf("%s\n", copy);
+	php_printf("<pre>%s</pre>\n", copy);
 	php_printf("--------- end decoding ------------\n");
 
 	return orig_compile_string(source_string, filename, position);
